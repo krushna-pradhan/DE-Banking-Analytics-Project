@@ -200,19 +200,20 @@ Raw CSVs (ADLS Gen2 - raw/)
 1. Provision Azure resources (Resource Group, ADLS Gen2, Databricks, Synapse) — Phase 1 steps in [`CASE_STUDY.md`](CASE_STUDY.md)
 2. Upload the 10 source CSVs to the `raw` container
 3. Run notebooks in order:
-   - `00_read_all_datasets` — read & validate raw data with inferred schema
-   - `01_read_with_schemas` — re-read with explicit, type-safe schemas
-   - `02_create_bronze_delta_tables` — write Bronze Delta tables + ingestion metadata
-   - `03_silver_transformations` — apply 50+ cleaning/enrichment rules
-   - `04_gold_transformations` — build the 10 Gold aggregation tables
-   - `05_register_tables` — register all tables in Unity Catalog
+   - `01_read_all_datasets` — read & validate raw data with inferred schema
+   - `02_read_with_schemas` — re-read with explicit, type-safe schemas
+   - `03_create_bronze_delta_tables` — write Bronze Delta tables + ingestion metadata
+   - `04_silver_transformations` — apply 50+ cleaning/enrichment rules
+   - `05_gold_transformations` — build the 10 Gold aggregation tables
+   - `06_register_tables_unity_catalog` — register all tables in Unity Catalog
+   - `SettiungUPExternalLocation` — Setting up External Location
 4. Query Gold tables via Synapse Serverless SQL or connect a BI tool (Power BI, Tableau)
 
 ---
 
 ## 🛠️ Tech Stack
 
-`Azure Databricks` · `PySpark` · `Delta Lake` · `Azure Data Lake Storage Gen2` · `Unity Catalog` · `Azure Synapse Analytics` · `Parquet`
+`Azure Databricks` · `PySpark` · `Delta Lake` · `Azure Data Lake Storage Gen2` · `Unity Catalog` · `Azure Synapse Analytics` · `Parquet` · `Azure Data Factory` · `Power BI`
 
 ---
 
